@@ -5,20 +5,20 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
 
 final homeViewModel =
-    ChangeNotifierProvider<HomeViewModel>((ref) => HomeViewModel(ref));
+    ChangeNotifierProvider.autoDispose<HomeViewModel>((ref) => HomeViewModel(ref));
 
 class HomeViewModel extends ChangeNotifier {
   HomeViewModel(Ref read);
 
   bool stateValue = true;
 
-  void changeStateValue() {
+   changeStateValue() {
     log("message $stateValue");
     stateValue = false;
     notifyListeners();
   }
 
-  void changeStateValueToFalse() {
+   changeStateValueToFalse() {
     log("message $stateValue");
     stateValue = true;
     notifyListeners();

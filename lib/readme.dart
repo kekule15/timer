@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get/instance_manager.dart';
 import 'package:get/get.dart';
-import 'package:timer/readme.dart';
-import 'package:timer/viewModel.dart';
+import 'package:timer/home.dart';
 
-class HomePage extends ConsumerWidget {
-  const HomePage({super.key});
+class ReadMe extends ConsumerWidget {
+  const ReadMe({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final turnIt = ref.watch(homeViewModel);
     return Scaffold(
+      backgroundColor: Colors.blue,
       body: Center(
         child: InkWell(
           onTap: () {
-            turnIt.changeStateValue();
-            Get.to(() => ReadMe());
+            //Get.to(() => HomePage());
           },
           child: Text(
-            'Home page',
-            style: TextStyle(color: Colors.black, fontSize: 20),
+            'Read Me Page',
+            style: TextStyle(color: Colors.white, fontSize: 20),
           ),
         ),
       ),

@@ -45,7 +45,7 @@ class _MyAppState extends ConsumerState<MyApp> {
       log('is false');
       !_timer!.isActive;
       _timer!.cancel();
-      _timer = Timer.periodic(const Duration(minutes: 10), (timer) {
+      _timer = Timer.periodic(const Duration(hours: 10), (timer) {
         // _logOutUser();
       });
     }
